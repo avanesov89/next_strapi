@@ -1,0 +1,168 @@
+@import '../main';
+
+.about {  
+
+	&__page {
+			padding-bottom: 100px;
+
+			&Item {
+					display: grid;
+					grid-template-columns: 35% auto;
+					padding: 80px 0;
+					position: relative;
+
+					@include before('lg') {
+							display: flex;
+							flex-direction: column;
+							padding: 40px 0;
+					}
+
+					&:nth-child(odd) {
+
+							&::after {
+									content: '';
+									background-color: var(--color-grey);
+									position: absolute;
+									top: 0;
+									left: 50%;
+									transform: translateX(-50%);
+									display: block;
+									width: 100vw;
+									height: 100%;
+									z-index: -1;
+							}
+					}
+			}
+
+			&Title {
+					font-size: 28px;
+					line-height: 42px;
+					font-weight: 600;
+					margin-bottom: 40px;
+
+					&::after {
+							content: '';
+							width: 70px;
+							height: 2px;
+							display: block;
+							background-color: var(--color-green);
+							border-radius: 10px;
+							margin-top: 15px;
+					}
+
+					@include before('sm') {
+							margin-bottom: 20px;
+					}
+			}
+
+			&Content {
+
+					@include after('lg') {
+							padding-top: 10px;
+					}
+
+					p {
+							font-size: 16px;
+							line-height: 24px;
+							margin: 0;
+
+							&:not(:last-child) {
+									margin-bottom: 20px;
+							}
+
+							@include before('sm') {
+									font-size: 14px;
+									line-height: 22px;
+							}
+
+							strong {
+								font-weight: 600;
+							}
+					}
+			}
+
+			&Experience {
+					font-size: 16px;
+					line-height: 24px;
+
+					@include before('sm') {
+							font-size: 14px;
+							line-height: 22px;
+					}
+
+					li {
+							&:not(:last-child) {
+									margin-bottom: 30px;
+							}
+					}
+
+					span {
+							font-weight: 600;
+							display: block;
+							margin-bottom: 10px;
+					}
+			}
+
+			&Skills {
+					display: flex;
+
+					@include before('sm') {
+							flex-wrap: wrap;
+							flex-direction: column;
+					}
+
+					li {
+							display: flex;
+							flex-direction: column;
+							width: 33.3%;
+							font-size: 24px;
+							line-height: 40px;
+							font-weight: 600;
+
+							@include before('sm') {
+									align-items: center;
+									width: 100%;
+									font-size: 20px;
+									line-height: 36px;
+
+									&:not(:last-child) {
+											margin-bottom: 20px;
+									}
+							}
+					}
+
+					img {
+							width: 35px;
+							height: 35px;
+							margin-bottom: 20px;
+					}
+			}
+
+			&Use {
+					display: flex;
+					flex-wrap: wrap;
+
+					li {
+							width: 20%;
+							margin-top: 70px;
+
+							&:nth-child(-n+5) {
+									margin-top: 0;
+							}
+
+							@include before('lg') {
+									margin-top: 30px;
+							}
+					}
+
+					svg {
+							width: 45px;
+							height: 45px;
+					}
+
+					@include before('lg') {
+							padding-top: 20px;
+					}
+			}
+	}
+}

@@ -1,0 +1,76 @@
+@import './main';
+
+.site-container {
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}
+
+.wrapper {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.is-hidden {
+  display: none !important; // stylelint-disable-line declaration-no-important
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list__reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1440px;
+	width: 100%;
+}
+
+.js-focus-visible:focus:not(.focus-visible) {
+  outline: none;
+}
+
+.transition-style {
+  transition: all 0.5s ease-out;
+}
+
+.category__title {
+	padding: 20px 0;
+	margin-bottom: 40px;
+
+	@include before('sm') {
+		padding: 15px 0;
+	}
+
+	h1 {
+			font-size: 32px;
+			line-height: 48px;
+			font-weight: 600;
+			color: var(--color-black);
+			margin-bottom: 20px;
+			margin-top: 0;
+	}
+
+	p {
+			font-size: 15px;
+			line-height: 22px;
+			margin: 0;
+			max-width: 420px;
+			opacity: 0.8;
+	}
+}

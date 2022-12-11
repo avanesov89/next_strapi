@@ -1,0 +1,49 @@
+@import '../main';
+
+.footer {
+	background-color: #1F2A2E;
+	padding: 25px 0;
+	color: #F2F2F2;
+	margin-top: auto;
+
+	svg {
+			fill: #F2F2F2;
+			transition: fill 0.2s ease;
+
+			&:hover,
+			&:focus {
+					fill: var(--color-green);
+					transition: fill 0.2s ease;
+			}
+	}
+
+	.container {
+			@include flex-v-center;
+	}
+
+	&__social {
+			margin-left: auto;
+			@include flex-v-center;
+
+			&_item {
+					&:not(:last-child) {
+							margin-right: 15px;
+					}
+			}
+ 
+			&_link {
+					svg {
+							width: 20px;
+							height: 20px;
+							fill: #F2F2F2;
+							transition: fill 0.2s ease;
+
+							&:hover,
+							&:focus {
+									fill: var(--color-green);
+									transition: fill 0.2s ease;
+							}
+					}
+			}
+	}
+}

@@ -1,0 +1,138 @@
+@import '../main';
+
+.services {
+
+	&__page {
+			padding-bottom: 100px;
+
+			@include before('sm') {
+					padding-bottom: 60px;
+			}
+	}
+
+	&__items {
+			display: flex;
+			flex-direction: column;
+
+			@include from-to('sm', 'lg') {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-gap: 20px;
+			}
+	}
+
+	&__block {
+			display: flex;
+			justify-content: space-between;
+			grid-column-gap: 30px;
+
+			&:nth-child(2n) {
+					grid-template-columns: auto 40%;
+
+					.services__info {
+							order: 1;
+							margin-left: auto;
+					}
+			}
+
+			@include before('sm') {
+					&:not(:last-child) {
+							margin-bottom: 20px;
+					}
+			}
+
+			@include after('lg') {
+					&:not(:last-child) {
+							margin-bottom: 40px;
+					}
+			}
+
+			@include after('lg') {
+					display: grid;
+					grid-template-columns: 40% auto;
+			}
+	}
+
+	&__info {
+			background: var(--color-grey);
+			border-radius: 4px;
+			padding: 30px;
+
+			@include before('lg') {
+					padding: 25px;
+					max-width: none;
+			}
+
+			@include before('sm') {
+					max-width: none;
+					padding: 20px;
+			}
+
+			svg {
+					width: 40px;
+					height: 40px;
+					fill: var(--color-black);
+			}
+
+			&Title {
+					font-size: 24px;
+					line-height: 42px;
+					font-weight: 600;
+					margin-top: 10px;
+					margin-bottom: 0;
+
+					@include before('sm') {
+							font-size: 22px;
+							line-height: 38px;
+							margin-top: 5px;
+					}
+			}
+
+			&Text {
+					font-size: 15px;
+					line-height: 23px;
+					margin-top: 20px;
+					margin-bottom: 0;
+
+					@include before('sm') {
+							font-size: 14px;
+							line-height: 20px;
+							margin-top: 15px;
+					}
+
+					p {
+						margin: 0;
+					}
+			}
+
+			&Img {
+					border-radius: 4px;
+					position: relative;
+					height: auto;
+					overflow: hidden;
+
+					&::after {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background: rgba(37, 43, 49, 0.1);
+							border-radius: 4px;
+							z-index: 1;
+					}
+
+					@include before('lg') {
+							display: none;
+					}
+			}
+
+			&Image {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+			}
+	}
+
+}
